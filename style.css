@@ -14,3 +14,9 @@
   --accent-color: #10b981;   /* Emerald 500 - Color de acento para CTA principal e icono del logo */
   --border-color: #e2e8f0;   /* Slate 200 - Líneas delimitadoras (Bordes del header, footer y tarjetas) */
 }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
