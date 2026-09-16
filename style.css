@@ -1,1 +1,215 @@
+:root {
+  /* Fondos */
+  --bg-main: #f8fafc;        /* Slate 50 - Fondo de la página web */
+  --bg-component: #ffffff;   /* Blanco Puro - Fondos de componentes */
 
+  /* Textos y Encabezados */
+  --text-title: #1e293b;     /* Slate 800 - Títulos principales e importantes */
+  --text-logo-btn: #0f172a;  /* Slate 900 - Texto del logo y Botón principal grande */
+  --text-subtitle: #475569;  /* Slate 600 - Subtítulo secundario */
+  --text-body: #64748b;      /* Slate 500 - Textos descriptivos y navegación */
+  --text-footer: #94a3b8;    /* Slate 400 - Texto del pie de página */
+
+  /* Acentos y Bordes */
+  --accent-color: #10b981;   /* Emerald 500 - Color de acento para CTA principal e icono del logo */
+  --border-color: #e2e8f0;   /* Slate 200 - Líneas delimitadoras (Bordes del header, footer y tarjetas) */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  min-height: 100vh;
+}
+
+/* Logo con círculo verde mediante pseudo-elemento */
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-logo-btn);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* Contenedor del nav */
+.header-container {
+  justify-self: center;
+}
+
+.nav-container {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: var(--text-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-container a:hover {
+  color: var(--text-title);
+}
+
+/* Botón Registro (Header) */
+.btn-container {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  justify-self: end;
+}
+
+.btn-container:hover {
+  opacity: 0.9;
+}
+
+.main-container {
+  grid-column: 1 / -1;
+  margin-top: 50px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  gap: 20px 40px;
+  margin-bottom: 60px;
+}
+
+.hero-title {
+  grid-column: 1;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-title);
+  line-height: 1.2;
+}
+
+.hero-texto {
+  grid-column: 1;
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+.btn-hero {
+  grid-column: 1;
+  justify-self: start;
+  background-color: var(--text-logo-btn);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.btn-hero:hover {
+  background-color: var(--text-title);
+}
+
+.hero-container .image {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 460px;
+  height: 345px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background-color: var(--bg-component);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.card .img {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  color: var(--text-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-texto {
+  color: var(--text-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-container {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-container p {
+  color: var(--text-footer);
+  font-size: 0.85rem;
+}
