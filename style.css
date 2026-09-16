@@ -33,3 +33,63 @@ body {
   padding: 20px 40px;
   min-height: 100vh;
 }
+
+/* Logo con círculo verde mediante pseudo-elemento */
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-logo-btn);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* Contenedor del nav */
+.header-container {
+  justify-self: center;
+}
+
+.nav-container {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: var(--text-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-container a:hover {
+  color: var(--text-title);
+}
+
+/* Botón Registro (Header) */
+.btn-container {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  justify-self: end;
+}
+
+.btn-container:hover {
+  opacity: 0.9;
+}
